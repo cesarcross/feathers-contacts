@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Card, Button, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import  axios  from  'axios';
 import  {  ContactContext  }  from  '../context/contact-context';
 import  {  flashErrorMessage  }  from  './flash-message';
 
-const  {  useContext  }  =  React;
+
 
 export default function ContactCard({ contact }) {
    // eslint-disable-next-line no-unused-vars
@@ -22,6 +22,8 @@ export default function ContactCard({ contact }) {
         payload: response.data,
       });
     } catch (error) {
+
+      
       flashErrorMessage(dispatch, error);
     }
   };
